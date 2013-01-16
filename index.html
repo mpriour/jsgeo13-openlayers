@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="externals/deckjs/extensions/hash/deck.hash.css">
 
     <link rel="stylesheet" href="externals/deckjs/themes/transition/horizontal-slide.css">
+    <link rel="stylesheet" href="externals/deckjs/themes/style/neon.css">
     <link rel="stylesheet" href="externals/openlayers/theme/default/style.css">
     <link rel="stylesheet" href="externals/jquery-ui-1.8.18.custom/css/ui-lightness/jquery-ui-1.8.18.custom.css">
 
@@ -21,7 +22,7 @@
     }
     .deck-container .slide h2 {
         color: #2d60b5;
-        border-bottom-color: #e28f3d;
+        border-bottom-color: #bada55;
     }
     .slide p, .slide li {
         font-size: 150%;
@@ -45,17 +46,20 @@
         font-size: 2.25em;
         text-align: center;
     }
+
+    section.slide .split{
+        width: 40%;
+        padding: 2% 4%;
+        position: relative;
+        top: 0;
+        left: 0;
+        float: left;
+    }
+
+    .split:nth-child(2n+1){
+        float: right;
+    }
     
-    #contributors-bin {
-        margin: 0 auto;
-        width: 60%;
-        overflow: hidden;
-    }
-    .slide img.gravatar {
-        margin: 1em;
-        width: 100px;
-        display: inline;
-    }
     .slide img.olTileImage {
         margin: 0;
         max-width: inherit;
@@ -64,26 +68,9 @@
         font-size: 2.25em;
         text-align: center;
     }
-    #utfgrid-flag {
-        position: relative;
-        z-index: 999;
-        height: 0px;
-        width: 0px;
-        -moz-transition: all 0.1s linear;
-        -webkit-transition: all 0.1s linear;
-    }
-    #utfgrid-flag img {
-        margin: 0;
-        max-width: inherit;
-        position: absolute;
-        width: 80px;
-        -moz-box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.3);
-        -webkit-box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.3);
-        box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.3);
-    }
-    #clientzoom-slider {
-        margin-bottom: 18px;
-        background: rgba(0, 60, 136, 0.5);
+
+    pre{
+        color: #bada55;
     }
 
     .olControlAttribution {
@@ -96,241 +83,192 @@
 
 <body class="deck-container">
         <div class="slide" id="frontpage">
-            <!--
-            Tim
-            -->
-            <h2>The Rebirth of Cool</h2>
-            <h1>OpenLayers</h1>
+            <h1>Better, Faster, More Modular</h1>
+            <h2>OpenLayers</h2>
             <ul class="authors">
-                <li>Tim Schaub <span class="subtle">(OpenGeo)</span></li>
-                <li>Eric Lemoine <span class="subtle">(Camptocamp)</span></li>
+                <li>Matt Priour<br>@mattpriour<br>mpriour@kestrelcomputer.com</li>
             </ul>
         </div>
 
         <section class="slide" id="whats-new">
-            <!--
-            Tim
-            -->
-            <h1>What's new?<br><em class="subtle">(and some old stuff you should know about too)</em></h1>
+            <h1>What's Happened Since 2.12? (March, 2012)</h1>
         </section>
         
-        <section class="slide" id="github-move">
-            <!--
-            Tim
-            -->
-            <h2>We've moved!</h2>
-            <img src="img/octocat.jpg" style="height: 80%;" alt="OpenLayers on GitHub">
-        </section>
-
-        <section class="slide" id="activity-commits">
-            <!--
-            Tim
-            -->
-            <h2>Increase in commits</h2>
-            <img src="img/chart-commits.png" style="height: 75%;" alt="OpenLayers Commits">
-            <div class="caption">commits</div>
-        </section>
-        <section class="slide" id="activity-contributors">
-            <!--
-            Tim
-            -->
-            <h2>Increase in contributors</h2>
-            <img src="img/chart-contributors.png" style="height: 75%;" alt="OpenLayers Contributors">
-            <div class="caption">contributors</div>
-        </section>
-
-        <section class="slide" id="contributors">
-            <!--
-            Tim
-            -->
-            <h2>Contributors galore</h2>
-            <div id="contributors-bin"></div>
-        </section>
-
-        <section class="slide" id="2.12">
-            <!--
-            Tim
-            -->
-            <h1>New in 2.11 &amp; 2.12</h1>
-        </section>
-
-        <section class="slide" id="mobile">
-            <!--
-            Tim
-            -->
-            <h2>Mobile</h2>
-            <img src="img/mobile.png" style="height: 80%" alt="mobile">
-        </section>
-
-        <section class="slide" id="html5">
-            <!--
-            Eric
-            -->
-            <h2>New features</h2>
-            <img src="img/html5.png" style="height: 80%" alt="HTML5">
-        </section>
-
-        <section class="slide" id="fade">
-            <!--
-            Eric
-            -->
-            <h2>Tile transitions</h2>
-            <div id="fade-map"></div>
-            <br>
-            <p class="subtle"><em>(and don't forget the new zoom control)</em></p>
-        </section>
-
-        <section class="slide" id="offline">
-            <!--
-            Eric
-            -->
-            <h2>Offline tile cache</h2>
-            <div id="offline-map"></div>
-            <br>
-            <p id="offline-stats" class="subtle"></p>
-        </section>
-
-        <section class="slide" id="canvas">
-            <!--
-            Tim
-            -->
-            <h2>Canvas rendering</h2>
-            <img src="img/canvas.png" style="height: 80%" alt="canvas">
-        </section>
-
-        <section class="slide" id="utfgrid">
-            <!--
-            Tim
-            -->
-            <h2>UTFGrid interaction</h2>
-            <div id="utfgrid-map">
-                <div id="utfgrid-flag"></div>
+        <section class="slide" id="github-contrib">
+            <h2>Healthy, Active Community</h2>
+            <div class="split">
+                <ul>
+                    <li>160 issues closed</li>
+                    <li>21 significant contributors<br><span class="subtle"><em>(3+ commits)</em></span></li>
+                    <li>12 active contributors<br><span class="subtle"><em>(Regular contributions throughout period)</em></span></li>
+                </ul>
             </div>
-            <br>
-            <p class="subtle" id="utfgrid-output"></p>
-        </section>
-
-        <section class="slide" id="clientzoom">
-            <!--
-            Eric
-            -->
-            <h2>Continuous zooming</h2>
-            <div id="clientzoom-slider">
+            <div class="split">
+                <img src="img/ol_contributors.jpg">
             </div>
-            <div id="clientzoom-map">
-            </div>
-            <br>
         </section>
 
-        <section class="slide" id="ongoing">
-            <!--
-            Eric
-            -->
-            <h1>Ongoing stuff, and ideas for the future</h1>
-            <!-- Note: been thinking about using a different title
-                 for this section. Something like "Roadmap/Wishes".
-            -->
+        <section class="slide" id="improvments">
+            <h2>Significantly More Convenient</h2>
+            <h1>New &amp; Improved OpenLayers<br>
+            <span class="subtle"><em>Almost as convenient as Leaflet &amp; Twice as powerful!</em>  </span></h1>
         </section>
 
-        <section class="slide" id="improvedui">
-            <!--
-            Eric
-            -->
-            <h2>Improved UI/UX</h2>
-            <img src="img/controls.png" style="width: 65%; float: right" alt="OpenLayers Controls">
-            <h3>On par with the new <code>Zoom</code> control</h3>
-            <ul>
-                <li>Look &amp; feel</li>
-                <li>Accessibility</li>
-                <li>CSS styling</li>
-            </ul>
+        <section class="slide" id="hosted-builds">
+            <h2>Hosted Builds</h2>
+            <h3>3 built versions of the library are hosted in both minified and debug form</h3>
+            <p>http://openlayers.org/[api|dev]/</p>
+            <p>Full - 
+                    <span class="subtle">the whole enchalida minus deprecated and language files</span><br>
+            <a href="http://openlayers.org/dev/OpenLayers.js">OpenLayers.js</a> <em>(225 KB)</em><br>
+            <a>OpenLayers.debug.js</a> <em>(645 KB)</em><br>
             </p>
-            <h3>Zoom Animation</h3>
+            <p>Mobile - 
+                <span class="subtle">designed for most mobile use cases including mobile data collection and simple editing</span><br>
+            <a href="http://openlayers.org/dev/OpenLayers.mobile.js">OpenLayers.mobile.js</a> <em>(85 KB)</em><br>
+            <a>OpenLayers.mobile.debug.js</a> <em>(285 KB)</em><br>
+            </p>
+            <p>Light - 
+                <span class="subtle">designed for most basic use cases. Most popular layer types & basic interaction with vector features</span><br>
+            <a href="http://openlayers.org/dev/OpenLayers.light.js">OpenLayers.light.js</a> <em>(75 KB)</em><br>
+            <a>OpenLayers.light.debug.js</a> <em>(258 KB)</em><br>
+            </p>
         </section>
-
-        <section class="slide" id="improvedapis">
-            <!--
-            Tim
-            -->
-            <h2>Improved APIs</h2>
-            <p>Previously:
-                <pre>var map = new OpenLayers.Map("map", {
-    projection: new OpenLayers.Projection(
-        "EPSG:900913"
-    ),
-    maxExtent: new OpenLayers.Bounds(
-        -20037508, -20037508, 
-        20037508, 20037508
-    ),
-    maxResolution: 156543.0339,
-    units: "m"
+        <section class="slide" id="easy-map">
+            <h2>Creating Maps Is Even Easier</h2>
+            <p>Simple Map Example</p>
+            <div class="split">
+                <h3>OpenLayers</h3>
+                <pre>
+var map = new OpenLayers.Map('mapdiv',{
+projection:'EPSG:3857',
+center: 
+   new OpenLayers.LonLat([-0.09, 51.05]).
+   transform('EPSG:4326','EPSG:3857'),
+zoom: 13
 });
-map.setCenter(new OpenLayers.LonLat(0, 0), 1);
-</pre>
-            </p>
-        </section>
 
-        <section class="slide" id="convenience-2">
-            <!--
-            Tim
-            -->
-            <h2>Improved APIs</h2>
-            <p>Now:
-                <pre>var map = new OpenLayers.Map({
-    div: "map",
-    projection: "EPSG:900913",
-    center: [0, 0],
-    zoom: 1
-});
-</pre>
-            </p>
-            <p>Simplified constructors plus sensible defaults.</p>            
-            <p>The OpenLayers APIs have improved.  But we can continue making improvements (e.g. CRS aware location and bounds).</p>
-        </section>
+map.addLayer(new OpenLayers.Layer.OSM('Streets'));
+                </pre>
+            </div>
+            <div class="split">
+                <h3>Leaflet</h3>
+                <pre>
+var map = L.map('mapdiv').setView([51.505, -0.09], 13);
 
-        <section class="slide" id="internals">
-            <!--
-            Eric
-            -->
-            <h2>Internal Improvements</h2>
-            <img src="img/fast-cat.jpg" style="width: 55%; float: right; margin-left: 1em;" alt="performance">
-            <h3>Performance optimizations</h3>
-            <ul>
-            <li>Use <code>requestAnimationFrame</code> for animations (when available)</li>
-            <!-- Speaker notes:
-                 requestAnimationFrame allows for
-                 - more faithful animations
-                 - less CPU and GPU usage
-            -->
-            <li>Tile queues for abortable tile requests</li>
-            <li>Back buffer overhaul</li>
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+}).addTo(map);
+                </pre>
+            </div>
+        </section>
+        <section class="slide" id="geojson">
+            <h2>Simple + Powerful</h2>
+            <p>OpeLayers knows how to get GeoJSON, not just parse it</p>
+<pre>
+//Load from static file
+var static = new OpenLayers.Layer.Vector('static',{
+protocol: new OpenLayers.Protocol.HTTP({url: 'airports.json'}),
+strategies:[new OpenLayers.Strategy.Fixed()]
+})
+</pre><pre>
+//Load from different origin & callback
+var scripttag = new OpenLayers.Layer.Vector('scripttag',{
+protocol: new OpenLayers.Protocol.Script({url: '...'}),
+strategies:[new OpenLayers.Strategy.Fixed()]
+})
+</pre><pre>
+//Load from mapping server and refresh when view changes  
+var scripttag = new OpenLayers.Layer.Vector('scripttag',{
+protocol: new OpenLayers.Protocol.Script({
+ url: '/geoserver/wfs',
+ params: {version:'1.1.0',
+        request: 'GetFeature',
+        outputFormat: 'JSON'}
+}),
+strategies:[new OpenLayers.Strategy.BBOX()]
+})
+</pre>            
+        </section>
+        <section class="slide" id="modular">
+            <h2>More Modular</h2>
+            <h3>New AMD wrapper build option.</h3>
+            <p>Take the a normal build or just the parts you want.</p>
+            <p class="subtle">Example:</p> 
+            <ul class="subtle">
+                <li>Take just geojson and geometry portion</li>
+                <li>Use that in a larger commonjs AMD or require.js loaded application</li>
             </ul>
         </section>
-
+        <section class="slide" id="google-map">
+            <h2>More Robust Google Base Map Support</h2>
+            <h1>No more Google Map DOM shuffle</h1>
+            <p>Let Google Maps control their own layers<p>
         </section>
-            <!--
-            Eric
-            -->
-        <section class="slide" id="moreimprovements">
-            <h2>More usability improvements</h2>
-            <img src="img/docs.png" style="width: 55%; float: right; margin-left: 1em;" alt="OpenLayers Docs">
+        <section class="slide" id="zoom">
+            <h2>Improved Animated Zoom</h2>
+            <div class="split">
             <ul>
-                <li>Website overhaul</li>
-                <li>More/better prose docs</li>
-                <li>Improved API docs</li>
-                <li>Organized examples</li>
-                <li>Hosted build tool</li>
+                <li>Faster, smoother animated tile zooming / panning</li>
+                <li>Use hardware accleration whenever possible</li>
+                <li>Greatly reduce browser reflows</li>
+                <li>Small in-memory tile cache</li>
             </ul>
-
+            </div>
+            <div class="split" id="zoom-map"></div>
         </section>
-
-        <section class="slide" id="discussions">
-            <!--
-            Tim
-            -->
-            <h2>Future features</h2>
-            <img src="img/future-mosaic.png" style="height: 80%; float: left;" alt="future">
-            <p>Ongoing discussion about Canvas 2D, WebGL, and more.</p>
+        <section class="slide" id="be-better">
+            <h2>We Can Do Even Better</h2>
+            <p>Docs still suck</p>
+            <p>Website is ancient</p>
+            <p>Outdated and therefore misleading tutorials</p>
+            <p>We need to do better job showing people both the easy and powerful parts of OpenLayers</p>
+        </section>
+         <section class="slide" id="ol3">
+            <h1>OpenLayers 3 - Looking to the future</h1>
+        </section>
+        <section class="slide" id="ol3-whichway">
+            <h2>Why Not Leaflet?</h2>
+            <ul>
+             <li>Provide several format and protocol plugin packages<br>
+                <span class="subtle"><em>Notably full OGC support</em></span></li>
+             <li>Help with more advanced vector styling and editing</li>
+             <li>Call it a day! ;)</li>
+            </ul>
+            <p>
+                Seriously considered, but would have resulted in a major split among the 4 companies supporting OL development   
+            </p>
+        </section>
+        <section class="slide" id="ol3-goals">
+            <h2>Feature Goals</h2>
+            <ul>
+                <li>First class WebGL rendering</li>
+                <li>DOM rendering when WebGL is not available or needed</li>
+                <li>Provide in a <u>single library</u>:<ul>
+                    <li>High performance mobile maps</li>
+                    <li>Fast standard 2d maps</li>
+                    <li>Fully fly-able &amp; warp-able 3d maps</li>
+                </ul></li>
+            </ul>
+        </section>
+        <section class="slide" id="ol3-division">
+            <h2>Division of Labor</h2>
+            <h3><u>CampToCamp</u></h3>
+            <p>Internal Code Framework</p>
+            <p class="subtle">Ensuring that highly performant multidimensional rendiering is supported</p>
+            <h3><u>OpenGeo</u></h3>
+            <p>A Great User Facing API</p>
+            <p class="sublte">Prose &amp; API documentation, a modern website, &amp; some internal code features</p>
+        </section>
+        <section class="slide" id="ol3-api">
+            <h2>API Goals</h2>
+            <p>Make the simple stuff as simple as possible <span class="subtle"><em>"Leaflet simple or even easier"</em></span></p>
+            <p>Make the complex stuff powerful &amp; performant</p>
+            <ul>
+                <li>2d - Super easy and simple to get started with</li>
+                <li>2.5d (Static, off-nadir camera) - Easy to understand &amp; fairly simple to use</li>
+                <li>3d - Use &amp; understand the full power and options in the library</li>
+            </ul>
         </section>
 
         <section class="slide" id="thanks">
@@ -353,7 +291,6 @@ map.setCenter(new OpenLayers.LonLat(0, 0), 1);
 <script src="externals/openlayers/lib/OpenLayers.js"></script>
 <script src="externals/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js"></script>
 <script>
-    OpenLayers.Control.CacheWrite = OpenLayers.Class(OpenLayers.Control, {});
     $(function() {
         // listen for slide changes and run custom to/from listeners
         $(document).bind("deck.change", function(event, from, to) {
@@ -378,46 +315,15 @@ map.setCenter(new OpenLayers.LonLat(0, 0), 1);
 
         // custom functions to be run when changing to/from specific slides
         var listeners = {
-            // set up gravatar images on contributors slide
-            contributors: {
-                to: function() {
-                    var contribImages = ["ahocevar.jpeg", "argson.png", "bartvde.jpeg", "crschmidt.jpeg", "drnextgis.png", "elemoine.jpeg", "fredj.jpeg", "gravatar.png", "gravitystorm.png", "jorix.png", "marcjansen.png", "mprins.jpeg", "mpriour.jpeg", "pagameba.jpeg", "perrygeo.jpeg", "pgiraud.jpeg", "sbrunner.png", "schuyler.jpeg", "tmcw.jpeg", "tomhughes.jpeg", "tonio.jpeg", "towa48.jpeg", "tschaub.png", "twpayne.jpeg", "ZiglioNZ.jpeg"];        
-                    contribImages.sort(function() {return (Math.round(Math.random())-0.5);});
-                    var container = $("#contributors-bin");
-                    container.html("");
-                    container.height(Math.round(0.8 * container.parent().height()));
-                    var img;
-                    for (var i=0, ii=contribImages.length; i<ii; ++i) {
-                        img = document.createElement("img");
-                        img.className = "gravatar";
-                        img.src = "img/gravatars/" + contribImages[i];
-                        container.append(img);
-                    }
-                    contribTimer = window.setInterval(function() {
-                        var kids = container.children();
-                        var len = kids.length;
-                        var last = $(container.children()[len-1]);
-                        var height = last.height();
-                        last.animate({width: "toggle", height: height, opacity: "toggle"}, {complete: function() {
-                            last.insertBefore($(kids[0]));
-                            last.animate({width: "toggle", opacity: "toggle"});
-                        }});
-                    }, 1500);
-                },
-                from: function() {
-                    window.clearTimeout(contribTimer);
-                }
-            },
             // add map to tile transition slide
-            fade: {
+            zoom: {
                 to: function() {
-                    OpenLayers.ProxyHost = "/proxy/?url=";
-                    $("#fade-map").attr("tabindex", "0")
-                    var height = Math.round(0.65 * $("#fade-map").parent().height());
-                    $("#fade-map").height(height);
-                    fadeMap = new OpenLayers.Map({
-                        div: "fade-map",
-                        projection: "EPSG:900913",
+                    $("#zoom-map").attr("tabindex", "0")
+                    var height = Math.round(0.75 * $("#zoom-map").parent().height());
+                    $("#zoom-map").height(height);
+                    zoomMap = new OpenLayers.Map({
+                        div: "zoom-map",
+                        projection: "EPSG:3857",
                         layers: [
                             new OpenLayers.Layer.XYZ(
                                 "MapQuest OSM", 
@@ -430,231 +336,24 @@ map.setCenter(new OpenLayers.LonLat(0, 0), 1);
                                 {transitionEffect: "resize", wrapDateLine: true}
                             )
                         ],
-                        center: [0, 0],
-                        zoom: 1
+                        center: [-11757523, 4679817],
+                        zoom: 6,
+                        tileManager: new OpenLayers.TileManager()
                     });
-                    var cacheRead = new OpenLayers.Control.CacheRead();
-                    var cacheWrite = new OpenLayers.Control.CacheWrite({
-                        imageFormat: "image/jpeg", autoActivate: true
-                    });
-                    fadeMap.addControls([cacheRead, cacheWrite]);
-
-                    fadeMap.addControl(
+                    zoomMap.addControl(
                         new OpenLayers.Control.KeyboardDefaults({
-                            observeElement: "fade-map"
+                            observeElement: "zoom-map"
                         })
                     );
                 },
                 from: function() {
-                    delete OpenLayers.ProxyHost;
-                    $("#fade-map").removeAttr('tabindex');
-                    if (fadeMap) {
-                        fadeMap.destroy();
-                        fadeMap = null;
+                    $("#zoom-map").removeAttr('tabindex');
+                    if (zoomMap) {
+                        zoomMap.destroy();
+                        zoomMap = null;
                     }
                 }
-            },
-            // map to demonstrate offline storage
-            offline: {
-                to: function() {
-                    
-                    var cacheHits = 0;
-                    function updateCacheStats(evt) {
-                        var stats = $("#offline-stats");
-                        var msg;
-                        if (window.localStorage) {
-                            msg = localStorage.length + " entries in cache.  ";
-                        } else {
-                            msg = "Local storage not supported. Try a different browser.  ";
-                        }
-                        if (evt && evt.tile.url.substr(0, 5) === "data:") {
-                            cacheHits++;
-                        }
-                        stats.html(msg + cacheHits + " cache hits.");
-                        
-                    }
-                    
-                    $("#offline-map").attr("tabindex", "0")
-                    var height = Math.round(0.65 * $("#offline-map").parent().height());
-                    $("#offline-map").height(height);
-                    offlineMap = new OpenLayers.Map({
-                        div: "offline-map",
-                        projection: "EPSG:900913",
-                        layers: [
-                            new OpenLayers.Layer.OSM("OSM", null, {
-                                eventListeners: {
-                                    tileloaded: updateCacheStats
-                                },
-                                transitionEffect: "resize"
-                            })
-                        ]
-                    });
-                    var cacheRead = new OpenLayers.Control.CacheRead();
-                    var cacheWrite = new OpenLayers.Control.CacheWrite({
-                        imageFormat: "image/jpeg", autoActivate: true
-                    });
-                    var keyboardNav = new OpenLayers.Control.KeyboardDefaults({
-                        observeElement: "offline-map"
-                    });
-                    offlineMap.addControls([cacheRead, cacheWrite, keyboardNav]);
-                    offlineMap.setCenter([0, 0], 1);
-
-                },
-                from: function() {
-                    $("#offline-map").removeAttr('tabindex');
-                    if (offlineMap) {
-                        offlineMap.destroy();
-                        offlineMap = null;
-                    }
-                }
-            },
-            // add map to tile transition slide
-            utfgrid: {
-                to: function() {
-                    OpenLayers.ProxyHost = "/proxy/?url=";
-                    
-                    $("#utfgrid-map").attr("tabindex", "0")
-                    var height = Math.round(0.65 * $("#utfgrid-map").parent().height());
-                    $("#utfgrid-map").height(height);
-                    utfgridMap = new OpenLayers.Map({
-                        div: "utfgrid-map",
-                        projection: "EPSG:900913",
-                        numZoomLevels: 3,
-                        layers: [
-                            new OpenLayers.Layer.XYZ(
-                                "MapQuest OSM", 
-                                [
-                                    "http://otile1.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
-                                    "http://otile2.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
-                                    "http://otile3.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
-                                    "http://otile4.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png"
-                                ],
-                                {transitionEffect: "resize", wrapDateLine: false}
-                            ),
-                            new OpenLayers.Layer.UTFGrid({
-                                url: "externals/openlayers/examples/utfgrid/geography-class/${z}/${x}/${y}.grid.json",
-                                utfgridResolution: 4,
-                                displayInLayerSwitcher: false
-                            })
-                        ],
-                        center: [0, 0],
-                        zoom: 2
-                    });
-                    var cacheRead = new OpenLayers.Control.CacheRead();
-                    var cacheWrite = new OpenLayers.Control.CacheWrite({
-                        imageFormat: "image/jpeg", autoActivate: true
-                    });
-                    utfgridMap.addControls([cacheRead, cacheWrite]);
-                    
-                    var output = document.getElementById("utfgrid-output");
-                    var flag = document.getElementById("utfgrid-flag");
-                    
-                    var callback = function(infoLookup, loc, pixel) {
-                        var msg = "";
-                        if (infoLookup) {
-                            var info;
-                            for (var idx in infoLookup) {
-                                // idx can be used to retrieve layer from map.layers[idx]
-                                info = infoLookup[idx];
-                                if (info && info.data) {
-                                    output.innerHTML = info.data.admin;
-                                    flag.innerHTML = "<img src='data:image/png;base64," + info.data.flag_png + "'>";
-                                    flag.style.left = (pixel.x + 15) + "px";
-                                    flag.style.top = (pixel.y + 15) + "px";
-                                } else {
-                                    output.innerHTML = flag.innerHTML = "&nbsp;";
-                                }
-                            }
-                        }
-                    };
-
-                    var utfGrid = new OpenLayers.Control.UTFGrid({
-                        callback: callback,
-                        handlerMode: "move"
-                    });
-
-                    var keyboardNav = new OpenLayers.Control.KeyboardDefaults({
-                        observeElement: "utfgrid-map"
-                    });
-
-                    utfgridMap.addControls([utfGrid, keyboardNav]);
-                },
-                from: function() {
-                    delete OpenLayers.ProxyHost;
-                    $("#utfgrid-map").removeAttr('tabindex');
-                    if (utfgridMap) {
-                        utfgridMap.destroy();
-                        utfgridMap = null;
-                    }
-                }
-            },
-            // add map to client zoom slide
-            clientzoom: {
-                to: function() {
-                    OpenLayers.ProxyHost = "/proxy/?url=";
-                    $("#clientzoom-map").attr("tabindex", "0")
-                    var height = Math.round(0.65 * $("#clientzoom-map").parent().height());
-                    $("#clientzoom-map").height(height);
-                    clientzoomMap = new OpenLayers.Map({
-                        div: "clientzoom-map",
-                        projection: "EPSG:900913",
-                        fractionalZoom: true,
-                        layers: [
-                            new OpenLayers.Layer.XYZ(
-                                "MapQuest OSM",
-                                [
-                                    "http://otile1.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
-                                    "http://otile2.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
-                                    "http://otile3.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
-                                    "http://otile4.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png"
-                                ],
-                                {
-                                    wrapDateLine: false,
-                                    transitionEffect: "resize",
-                                    serverResolutions: [156543.03390625, 78271.516953125, 39135.7584765625, 19567.87923828125, 9783.939619140625, 4891.9698095703125, 2445.9849047851562, 1222.9924523925781, 611.4962261962891, 305.74811309814453, 152.87405654907226, 76.43702827453613, 38.218514137268066, 19.109257068634033, 9.554628534317017, 4.777314267158508]
-                                }
-                            )
-                        ],
-                        center: [-8573024.2172157,4706686.4530327],
-                        zoom: 7
-                    });
-                    var keyboardNav = new OpenLayers.Control.KeyboardDefaults({
-                        observeElement: "clientzoom-map"
-                    });
-                    clientzoomMap.addControls([keyboardNav]);
-
-                    var cacheRead = new OpenLayers.Control.CacheRead();
-                    var cacheWrite = new OpenLayers.Control.CacheWrite({
-                        imageFormat: "image/jpeg", autoActivate: true
-                    });
-                    clientzoomMap.addControls([cacheRead, cacheWrite]);
-
-                    $("#clientzoom-slider").slider({
-                        slide: function(e, ui) {
-                            e.stopPropagation();
-                            clientzoomMap.zoomTo(ui.value);
-                        },
-                        min: 0,
-                        max: clientzoomMap.baseLayer.numZoomLevels - 1,
-                        value: clientzoomMap.getZoom(),
-                        step: 0.01
-                    });
-                    clientzoomMap.events.on({
-                        moveend: function() {
-                            $("#clientzoom-slider").slider("value", [clientzoomMap.getZoom()]);
-                        }
-                    });
-                },
-                from: function() {
-                    delete OpenLayers.ProxyHost;
-                    $("#clientzoom-map").removeAttr('tabindex');
-                    if (clientzoomMap) {
-                        clientzoomMap.destroy();
-                        clientzoomMap = null;
-                    }
-                    $("#clientzoom-slider").slider("destroy");
-                }
-            },
+            }
         };
         
         // initialize slides
