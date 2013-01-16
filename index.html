@@ -27,6 +27,9 @@
     .slide p, .slide li {
         font-size: 150%;
     }
+    .slide > ul > li, .split > ul > li {
+        list-style: none;
+    }
     .subtle {
         color: #666;
     }
@@ -97,11 +100,11 @@
         <section class="slide" id="github-contrib">
             <h2>Healthy, Active Community</h2>
             <div class="split">
-                <ul>
+                <ul><li><ul>
                     <li>160 issues closed</li>
                     <li>21 significant contributors<br><span class="subtle"><em>(3+ commits)</em></span></li>
                     <li>12 active contributors<br><span class="subtle"><em>(Regular contributions throughout period)</em></span></li>
-                </ul>
+                </ul></li></ul>
             </div>
             <div class="split">
                 <img src="img/ol_contributors.jpg">
@@ -195,10 +198,10 @@ strategies:[new OpenLayers.Strategy.BBOX()]
             <h3>New AMD wrapper build option.</h3>
             <p>Take the a normal build or just the parts you want.</p>
             <p class="subtle">Example:</p> 
-            <ul class="subtle">
+            <ul class="subtle"><li><ul>
                 <li>Take just geojson and geometry portion</li>
                 <li>Use that in a larger commonjs AMD or require.js loaded application</li>
-            </ul>
+            </ul></li></ul>
         </section>
         <section class="slide" id="google-map">
             <h2>More Robust Google Base Map Support</h2>
@@ -208,33 +211,35 @@ strategies:[new OpenLayers.Strategy.BBOX()]
         <section class="slide" id="zoom">
             <h2>Improved Animated Zoom</h2>
             <div class="split">
-            <ul>
+            <ul><li><ul>
                 <li>Faster, smoother animated tile zooming / panning</li>
                 <li>Use hardware accleration whenever possible</li>
                 <li>Greatly reduce browser reflows</li>
                 <li>Small in-memory tile cache</li>
-            </ul>
+            </ul></li></ul>
             </div>
             <div class="split" id="zoom-map"></div>
         </section>
         <section class="slide" id="be-better">
             <h2>We Can Do Even Better</h2>
-            <p>Docs still suck</p>
-            <p>Website is ancient</p>
-            <p>Outdated and therefore misleading tutorials</p>
-            <p>We need to do better job showing people both the easy and powerful parts of OpenLayers</p>
+            <ul><li><ul>
+            <li>Docs still suck</li>
+            <li>Website is ancient</li>
+            <li>Outdated and therefore misleading tutorials</li>
+            <li>Better job of showing off the easy and powerful parts of OpenLayers</li>
+            </ul></li></ul>
         </section>
          <section class="slide" id="ol3">
             <h1>OpenLayers 3 - Looking to the future</h1>
         </section>
         <section class="slide" id="ol3-whichway">
             <h2>Why Not Leaflet?</h2>
-            <ul>
+            <ul><li><ul>
              <li>Provide several format and protocol plugin packages<br>
                 <span class="subtle"><em>Notably full OGC support</em></span></li>
              <li>Help with more advanced vector styling and editing</li>
              <li>Call it a day! ;)</li>
-            </ul>
+            </ul></li></ul>
             <p>
                 Seriously considered, but would have resulted in a major split among the 4 companies supporting OL development   
             </p>
@@ -255,10 +260,10 @@ strategies:[new OpenLayers.Strategy.BBOX()]
             <h2>Division of Labor</h2>
             <h3><u>CampToCamp</u></h3>
             <p>Internal Code Framework</p>
-            <p class="subtle">Ensuring that highly performant multidimensional rendiering is supported</p>
+            <p>Ensuring that highly performant multidimensional rendiering is supported</p>
             <h3><u>OpenGeo</u></h3>
             <p>A Great User Facing API</p>
-            <p class="sublte">Prose &amp; API documentation, a modern website, &amp; some internal code features</p>
+            <p>Prose &amp; API documentation, a modern website, &amp; some internal code features</p>
         </section>
         <section class="slide" id="ol3-api">
             <h2>API Goals</h2>
@@ -288,7 +293,7 @@ strategies:[new OpenLayers.Strategy.BBOX()]
 <script src="externals/deckjs/extensions/navigation/deck.navigation.js"></script>
 <script src="externals/deckjs/extensions/goto/deck.goto.js"></script>
 <script src="externals/deckjs/extensions/hash/deck.hash.js"></script>
-<script src="externals/openlayers/lib/OpenLayers.js"></script>
+<script src="externals/openlayers/OpenLayers.js"></script>
 <script src="externals/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js"></script>
 <script>
     $(function() {
