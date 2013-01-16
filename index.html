@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="externals/deckjs/core/deck.core.css">
+    <link rel="stylesheet" href="externals/deckjs/extensions/navigation/deck.navigation.css">
+    <link rel="stylesheet" href="externals/deckjs/extensions/goto/deck.goto.css">
+    <link rel="stylesheet" href="externals/deckjs/extensions/hash/deck.hash.css">
+
+    <link rel="stylesheet" href="externals/deckjs/themes/transition/horizontal-slide.css">
+    <link rel="stylesheet" href="externals/deckjs/themes/style/neon.css">
+    <link rel="stylesheet" href="externals/openlayers/theme/default/style.css">
+    <link rel="stylesheet" href="externals/jquery-ui-1.8.18.custom/css/ui-lightness/jquery-ui-1.8.18.custom.css">
+
+    <style>
+    body {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    }
+    .deck-container .slide h1 {
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    }
+    .deck-container .slide h2 {
+        color: #2d60b5;
+        border-bottom-color: #bada55;
+    }
+    .slide p, .slide li {
+        font-size: 150%;
+    }
+    .subtle {
+        color: #666;
+    }
+    .slide em.subtle {
+        font-size: 50%;
+    }
+    ul.authors {
+        position: absolute;
+        top: 70%;
+    }
+    ul.authors li {
+        list-style: none;
+        font-size: 2.25em;
+        font-weight: bold;
+    }
+    div.caption {
+        font-size: 2.25em;
+        text-align: center;
+    }
+
+    section.slide .split{
+        width: 40%;
+        padding: 2% 4%;
+        position: relative;
+        top: 0;
+        left: 0;
+        float: left;
+    }
+
+    .split:nth-child(2n+1){
+        float: right;
+    }
+    
+    .slide img.olTileImage {
+        margin: 0;
+        max-width: inherit;
+    }
+    div.caption {
+        font-size: 2.25em;
+        text-align: center;
+    }
+
+    pre{
+        color: #bada55;
+    }
+
+    .olControlAttribution {
+        bottom: 3px;
+    }
+    </style>
+
+    <script src="externals/deckjs/modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+        <div class="slide" id="frontpage">
+            <h1>Better, Faster, More Modular</h1>
+            <h2>OpenLayers</h2>
+            <ul class="authors">
+                <li>Matt Priour<br>@mattpriour<br>mpriour@kestrelcomputer.com</li>
+            </ul>
+        </div>
+
+        <section class="slide" id="whats-new">
+            <h1>What's Happened Since 2.12? (March, 2012)</h1>
+        </section>
+        
+        <section class="slide" id="github-contrib">
+            <h2>Healthy, Active Community</h2>
+            <div class="split">
+                <ul>
+                    <li>160 issues closed</li>
+                    <li>21 significant contributors<br><span class="subtle"><em>(3+ commits)</em></span></li>
+                    <li>12 active contributors<br><span class="subtle"><em>(Regular contributions throughout period)</em></span></li>
+                </ul>
+            </div>
+            <div class="split">
+                <img src="img/ol_contributors.jpg">
+            </div>
+        </section>
+
+        <section class="slide" id="improvments">
+            <h2>Significantly More Convenient</h2>
+            <h1>New &amp; Improved OpenLayers<br>
+            <span class="subtle"><em>Almost as convenient as Leaflet &amp; Twice as powerful!</em>  </span></h1>
+        </section>
+
+        <section class="slide" id="hosted-builds">
+            <h2>Hosted Builds</h2>
+            <h3>3 built versions of the library are hosted in both minified and debug form</h3>
+            <p>http://openlayers.org/[api|dev]/</p>
+            <p>Full - 
+                    <span class="subtle">the whole enchalida minus deprecated and language files</span><br>
+            <a href="http://openlayers.org/dev/OpenLayers.js">OpenLayers.js</a> <em>(225 KB)</em><br>
+            <a>OpenLayers.debug.js</a> <em>(645 KB)</em><br>
+            </p>
+            <p>Mobile - 
+                <span class="subtle">designed for most mobile use cases including mobile data collection and simple editing</span><br>
+            <a href="http://openlayers.org/dev/OpenLayers.mobile.js">OpenLayers.mobile.js</a> <em>(85 KB)</em><br>
+            <a>OpenLayers.mobile.debug.js</a> <em>(285 KB)</em><br>
+            </p>
+            <p>Light - 
+                <span class="subtle">designed for most basic use cases. Most popular layer types & basic interaction with vector features</span><br>
+            <a href="http://openlayers.org/dev/OpenLayers.light.js">OpenLayers.light.js</a> <em>(75 KB)</em><br>
+            <a>OpenLayers.light.debug.js</a> <em>(258 KB)</em><br>
+            </p>
+        </section>
+        <section class="slide" id="easy-map">
+            <h2>Creating Maps Is Even Easier</h2>
+            <p>Simple Map Example</p>
+            <div class="split">
+                <h3>OpenLayers</h3>
+                <pre>
+var map = new OpenLayers.Map('mapdiv',{
+projection:'EPSG:3857',
+center: 
+   new OpenLayers.LonLat([-0.09, 51.05]).
+   transform('EPSG:4326','EPSG:3857'),
+zoom: 13
+});
+
+map.addLayer(new OpenLayers.Layer.OSM('Streets'));
+                </pre>
+            </div>
+            <div class="split">
+                <h3>Leaflet</h3>
+                <pre>
+var map = L.map('mapdiv').setView([51.505, -0.09], 13);
+
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+}).addTo(map);
+                </pre>
+            </div>
+        </section>
+        <section class="slide" id="geojson">
+            <h2>Simple + Powerful</h2>
+            <p>OpeLayers knows how to get GeoJSON, not just parse it</p>
+<pre>
+//Load from static file
+var static = new OpenLayers.Layer.Vector('static',{
+protocol: new OpenLayers.Protocol.HTTP({url: 'airports.json'}),
+strategies:[new OpenLayers.Strategy.Fixed()]
+})
+</pre><pre>
+//Load from different origin & callback
+var scripttag = new OpenLayers.Layer.Vector('scripttag',{
+protocol: new OpenLayers.Protocol.Script({url: '...'}),
+strategies:[new OpenLayers.Strategy.Fixed()]
+})
+</pre><pre>
+//Load from mapping server and refresh when view changes  
+var scripttag = new OpenLayers.Layer.Vector('scripttag',{
+protocol: new OpenLayers.Protocol.Script({
+ url: '/geoserver/wfs',
+ params: {version:'1.1.0',
+        request: 'GetFeature',
+        outputFormat: 'JSON'}
+}),
+strategies:[new OpenLayers.Strategy.BBOX()]
+})
+</pre>            
+        </section>
+        <section class="slide" id="modular">
+            <h2>More Modular</h2>
+            <h3>New AMD wrapper build option.</h3>
+            <p>Take the a normal build or just the parts you want.</p>
+            <p class="subtle">Example:</p> 
+            <ul class="subtle">
+                <li>Take just geojson and geometry portion</li>
+                <li>Use that in a larger commonjs AMD or require.js loaded application</li>
+            </ul>
+        </section>
+        <section class="slide" id="google-map">
+            <h2>More Robust Google Base Map Support</h2>
+            <h1>No more Google Map DOM shuffle</h1>
+            <p>Let Google Maps control their own layers<p>
+        </section>
+        <section class="slide" id="zoom">
+            <h2>Improved Animated Zoom</h2>
+            <div class="split">
+            <ul>
+                <li>Faster, smoother animated tile zooming / panning</li>
+                <li>Use hardware accleration whenever possible</li>
+                <li>Greatly reduce browser reflows</li>
+                <li>Small in-memory tile cache</li>
+            </ul>
+            </div>
+            <div class="split" id="zoom-map"></div>
+        </section>
+        <section class="slide" id="be-better">
+            <h2>We Can Do Even Better</h2>
+            <p>Docs still suck</p>
+            <p>Website is ancient</p>
+            <p>Outdated and therefore misleading tutorials</p>
+            <p>We need to do better job showing people both the easy and powerful parts of OpenLayers</p>
+        </section>
+         <section class="slide" id="ol3">
+            <h1>OpenLayers 3 - Looking to the future</h1>
+        </section>
+        <section class="slide" id="ol3-whichway">
+            <h2>Why Not Leaflet?</h2>
+            <ul>
+             <li>Provide several format and protocol plugin packages<br>
+                <span class="subtle"><em>Notably full OGC support</em></span></li>
+             <li>Help with more advanced vector styling and editing</li>
+             <li>Call it a day! ;)</li>
+            </ul>
+            <p>
+                Seriously considered, but would have resulted in a major split among the 4 companies supporting OL development   
+            </p>
+        </section>
+        <section class="slide" id="ol3-goals">
+            <h2>Feature Goals</h2>
+            <ul>
+                <li>First class WebGL rendering</li>
+                <li>DOM rendering when WebGL is not available or needed</li>
+                <li>Provide in a <u>single library</u>:<ul>
+                    <li>High performance mobile maps</li>
+                    <li>Fast standard 2d maps</li>
+                    <li>Fully fly-able &amp; warp-able 3d maps</li>
+                </ul></li>
+            </ul>
+        </section>
+        <section class="slide" id="ol3-division">
+            <h2>Division of Labor</h2>
+            <h3><u>CampToCamp</u></h3>
+            <p>Internal Code Framework</p>
+            <p class="subtle">Ensuring that highly performant multidimensional rendiering is supported</p>
+            <h3><u>OpenGeo</u></h3>
+            <p>A Great User Facing API</p>
+            <p class="sublte">Prose &amp; API documentation, a modern website, &amp; some internal code features</p>
+        </section>
+        <section class="slide" id="ol3-api">
+            <h2>API Goals</h2>
+            <p>Make the simple stuff as simple as possible <span class="subtle"><em>"Leaflet simple or even easier"</em></span></p>
+            <p>Make the complex stuff powerful &amp; performant</p>
+            <ul>
+                <li>2d - Super easy and simple to get started with</li>
+                <li>2.5d (Static, off-nadir camera) - Easy to understand &amp; fairly simple to use</li>
+                <li>3d - Use &amp; understand the full power and options in the library</li>
+            </ul>
+        </section>
+
+        <section class="slide" id="thanks">
+            <h1>Thanks!</h1>
+        </section>
+
+        <form action="." method="get" class="goto-form">
+            <label for="goto-slide">Go to slide:</label>
+
+            <input type="number" name="slidenum" id="goto-slide">
+            <input type="submit" value="Go">
+        </form>
+</body>
+
+<script src="externals/deckjs/jquery-1.7.min.js"></script>
+<script src="externals/deckjs/core/deck.core.js"></script>
+<script src="externals/deckjs/extensions/navigation/deck.navigation.js"></script>
+<script src="externals/deckjs/extensions/goto/deck.goto.js"></script>
+<script src="externals/deckjs/extensions/hash/deck.hash.js"></script>
+<script src="externals/openlayers/lib/OpenLayers.js"></script>
+<script src="externals/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script>
+    $(function() {
+        // listen for slide changes and run custom to/from listeners
+        $(document).bind("deck.change", function(event, from, to) {
+            var toId = $.deck("getSlide", to).attr("id");
+            if (toId in listeners && listeners[toId].to) {
+                // call in next cycle to let slide rendering finish
+                window.setTimeout(function() {
+                    listeners[toId].to();                    
+                }, 0);
+            }
+            var fromId = $.deck("getSlide", from).attr("id");
+            if (fromId in listeners && listeners[fromId].from) {
+                // call in next cycle to let slide rendering finish
+                window.setTimeout(function() {
+                    listeners[fromId].from();
+                }, 0);
+            }
+            
+        });
+        
+        var contribTimer, fadeMap, offlineMap, utfgridMap;
+
+        // custom functions to be run when changing to/from specific slides
+        var listeners = {
+            // add map to tile transition slide
+            zoom: {
+                to: function() {
+                    $("#zoom-map").attr("tabindex", "0")
+                    var height = Math.round(0.75 * $("#zoom-map").parent().height());
+                    $("#zoom-map").height(height);
+                    zoomMap = new OpenLayers.Map({
+                        div: "zoom-map",
+                        projection: "EPSG:3857",
+                        layers: [
+                            new OpenLayers.Layer.XYZ(
+                                "MapQuest OSM", 
+                                [
+                                    "http://otile1.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
+                                    "http://otile2.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
+                                    "http://otile3.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png",
+                                    "http://otile4.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.png"
+                                ],
+                                {transitionEffect: "resize", wrapDateLine: true}
+                            )
+                        ],
+                        center: [-11757523, 4679817],
+                        zoom: 6,
+                        tileManager: new OpenLayers.TileManager()
+                    });
+                    zoomMap.addControl(
+                        new OpenLayers.Control.KeyboardDefaults({
+                            observeElement: "zoom-map"
+                        })
+                    );
+                },
+                from: function() {
+                    $("#zoom-map").removeAttr('tabindex');
+                    if (zoomMap) {
+                        zoomMap.destroy();
+                        zoomMap = null;
+                    }
+                }
+            }
+        };
+        
+        // initialize slides
+        $.deck(".slide");
+        
+        
+    });
+</script>
+
+</html>
